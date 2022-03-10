@@ -36,3 +36,21 @@ CREATE TABLE Doctors
 	CONSTRAINT PK_Doctors PRIMARY KEY(DoctorId),
 	CONSTRAINT FK_Doctors_Hospitals FOREIGN KEY(HospitalId) REFERENCES Hospitals(HospitalId)
 )
+
+
+CREATE TABLE Students
+(
+	Id	INT IDENTITY,
+	name		VARCHAR(200),
+	email	VARCHAR(200),
+	dob	DATE,	
+	CONSTRAINT PK_Doctors PRIMARY KEY(Id)
+	
+)
+
+
+insert into Students values ('Sanuel', 'samuel18@gmail.com', '2018-01-01')
+insert into Students values ('Soraya', 'soraya18@gmail.com', '2018-01-09')
+
+
+select * from Students
