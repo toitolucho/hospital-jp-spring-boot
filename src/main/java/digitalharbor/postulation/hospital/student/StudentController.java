@@ -25,6 +25,7 @@ public class StudentController {
 	@GetMapping
 	public List<Student> getStudents()
 	{
+		//return null;
 		return  studentService.getStudents();
 	}
 }

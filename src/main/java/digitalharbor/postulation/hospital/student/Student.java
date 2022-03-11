@@ -6,7 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
-@Table
+@Table(name = "Students")
+@Entity
 public class Student {
 	@Id
 	@GeneratedValue
@@ -47,11 +48,10 @@ public class Student {
 	}
 	
 	
-	protected Student() {
+	public Student() {
 		
 	}
-	public Student(Long id, String name, String email, LocalDate dob, Integer age) {
-		super();
+	public Student(Long id, String name, String email, LocalDate dob, Integer age) {		
 		this.id = id;
 		this.name = name;
 		this.email = email;

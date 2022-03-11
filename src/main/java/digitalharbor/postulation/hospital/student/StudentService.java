@@ -1,5 +1,6 @@
 package digitalharbor.postulation.hospital.student;
 
+
 import java.time.LocalDate;
 import java.util.List;
 
@@ -8,12 +9,12 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 @Service
+@Component
 public class StudentService {
 	private final StudentRepository studentRepository;
 	
 	@Autowired
-	public StudentService(StudentRepository studentRepository) {
-		super();
+	public StudentService(StudentRepository studentRepository) {		
 		this.studentRepository = studentRepository;
 	}
 
@@ -21,9 +22,10 @@ public class StudentService {
 	public List<Student> getStudents()
 	{
 //		return  List.of(
-//					new Student(1L,"Luis Antonio", "antoniomolina.yampa@gmail.com", LocalDate.of(1987, 10, 31), 34)
+//					new Student("Luis Antonio", "antoniomolina.yampa@gmail.com", LocalDate.of(1987, 10, 31), 34)
 //				);
 		return studentRepository.findAll();
+		//return null;
 	}
 
 }
