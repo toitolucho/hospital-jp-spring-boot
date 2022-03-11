@@ -14,7 +14,7 @@ import digitalharbor.postulation.hospital.student.Student;
 
 
 
-@EntityScan("digitalharbor.postulation.hospital")  
+//@EntityScan("digitalharbor.postulation.hospital")  
 @SpringBootApplication
 public class HospitalApplication {
 	

@@ -24,13 +24,27 @@ create table Hospitals
 )
 
 
+CREATE TABLE Patients
+(
+	PatientId	INT IDENTITY,
+	FirstName	VARCHAR(200),
+	LastName	VARCHAR(200),
+	Address		VARCHAR(200),
+	DateOfBirth DATE,
+	PictureFile VARCHAR(200),
+	HospitalId	INT,
+	CONSTRAINT PK_Patients PRIMARY KEY(PatientId),
+	CONSTRAINT FK_Patients_Hospitals FOREIGN KEY(HospitalId) REFERENCES Hospitals(HospitalId)
+)
+
+
 CREATE TABLE Doctors
 (
 	DoctorId	INT IDENTITY,
-	Names		VARCHAR(200),
+	FirstName	VARCHAR(200),
 	LastNames	VARCHAR(200),
 	DateOfBirth	DATE,
-	Adress		VARCHAR(200),
+	Address		VARCHAR(200),
 	PictureFile VARCHAR(200),
 	HospitalId	INT,
 	CONSTRAINT PK_Doctors PRIMARY KEY(DoctorId),
@@ -38,19 +52,41 @@ CREATE TABLE Doctors
 )
 
 
-CREATE TABLE Students
+CREATE TABLE PatienteHistorial
 (
-	Id	INT IDENTITY,
-	name		VARCHAR(200),
-	email	VARCHAR(200),
-	dob	DATE,	
-	CONSTRAINT PK_Doctors PRIMARY KEY(Id)
-	
+	HistorialId			INT IDENTITY,
+	Description			VARCHAR(MAX),
+	RegistrationDate	DATETIME,
+	PatientId			INT,
+	CONSTRAINT PK_PatienteHistorial PRIMARY KEY (HistorialId),
+	CONSTRAINT FK_PatienteHistorial_Patients FOREIGN KEY(PatientId) REFERENCES Patients(PatientId)
 )
 
 
-insert into Students values ('Sanuel', 'samuel18@gmail.com', '2018-01-01')
-insert into Students values ('Soraya', 'soraya18@gmail.com', '2018-01-09')
+
+CREATE TABLE Specialities
+(
+	SpecialityId	INT IDENTITY,
+	SpecialityName	VARCHAR(200),
+	IconProfile		VARCHAR(200),
+	CONSTRAINT PK_Specialities PRIMARY KEY (SpecialityId),
+	CONSTRAINT U_SpecialityName UNIQUE (SpecialityName)
+)
+
+--drop  table Students
+
+--CREATE TABLE Students
+--(
+--	Id	INT IDENTITY,
+--	name		VARCHAR(200),
+--	email	VARCHAR(200),
+--	dob	DATE,	
+--	age int,
+--	CONSTRAINT PK_Students PRIMARY KEY(Id)
+	
+--)
 
 
-select * from Students
+--insert into Students values ('Sanuel', 'samuel18@gmail.com', '2018-01-01',14)
+--insert into Students values ('Soraya', 'soraya18@gmail.com', '2018-01-09',16)
+--insert into Students values ('alejandro', 'alejandro@gmail.com', '2018-01-09',19)

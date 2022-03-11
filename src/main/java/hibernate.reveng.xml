@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.org/dtd/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+	<table-filter match-catalog="hospitalDH" match-schema="dbo"
+		match-name="Doctors" />
+	<table-filter match-catalog="hospitalDH" match-schema="dbo"
+		match-name="Hospitals" />
+	<table-filter match-catalog="hospitalDH" match-schema="dbo"
+		match-name="Students" />
+	<table-filter match-catalog="hospitalDH" match-schema="dbo"
+		match-name="Users" />
+	<table catalog="hospitalDH" schema="dbo" name="Doctors" class="Doctor">
+		<column name="DoctorId" property="Id"></column>
+		<column name="LastNames"></column>
+		<column name="DateOfBirth"></column>
+		<column name="Names"></column>
+		<column name="Adress"></column>
+		<column name="HospitalId"></column>
+		<column name="PictureFile"></column>
+	</table>
+	<table catalog="hospitalDH" schema="dbo" name="Hospitals" class="Hospital">
+		<column name="HospitalId" property="Id"></column>
+		<column name="Description"></column>
+		<column name="Name"></column>
+	</table>
+	<table catalog="hospitalDH" schema="dbo" name="Students" class="Student">
+		<column name="Id"></column>
+		<column name="dob"></column>
+		<column name="email"></column>
+		<column name="name"></column>
+		<column name="age"></column>
+	</table>
+	<table catalog="hospitalDH" schema="dbo" name="Users" class="User">
+		<column name="UserId" property="Id"></column>
+		<column name="UserName"></column>
+		<column name="UserType"></column>
+		<column name="UserPassword"></column>
+	</table>
+</hibernate-reverse-engineering>
