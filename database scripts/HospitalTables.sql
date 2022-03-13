@@ -2,6 +2,7 @@ use hospitalDH
 go
 
 DROP TABLE Doctors; 
+DROP TABLE Patients; 
 DROP TABLE Hospitals;
 DROP TABLE Users;
 
@@ -22,6 +23,7 @@ create table Hospitals
 	Description VARCHAR(max),
 	CONSTRAINT PK_Hospital PRIMARY KEY (HospitalId)
 )
+
 
 
 CREATE TABLE Patients
@@ -50,7 +52,18 @@ CREATE TABLE Doctors
 	CONSTRAINT PK_Doctors PRIMARY KEY(DoctorId),
 	CONSTRAINT FK_Doctors_Hospitals FOREIGN KEY(HospitalId) REFERENCES Hospitals(HospitalId)
 )
+insert into Doctors values ('Rodolfo', 'Merida' , '2018-01-01','Rdolofo Villarroel 68', null,  1)
+insert into Doctors values ('Alejandra', 'Rojas' , '2018-01-01','Rdolofo Villarroel 68', null, 1)
+insert into Doctors values ('Romseri', 'Lopez' , '2018-01-01','Rdolofo Villarroel 68', null, 2)
+insert into Doctors values ('Romelia', 'Carreño' , '2018-01-01','Rdolofo Villarroel 68', null, 2)
+insert into Doctors values ('Carlos Walter', 'Baptista' , '2018-01-01','Rdolofo Villarroel 68', null, 3)
+select * from Doctors
 
+
+insert into Hospitals values ('Hospital de las Americas', 'Hospital de las Americas')
+insert into Hospitals values ('Hospital Cristo Sol', 'risto Sol')
+insert into Hospitals values ('Hospital Universitario', 'Hospital de las Americas')
+select * from Hospitals
 
 CREATE TABLE PatienteHistorial
 (
@@ -73,6 +86,11 @@ CREATE TABLE Specialities
 	CONSTRAINT U_SpecialityName UNIQUE (SpecialityName)
 )
 
+
+select * from doctors
+
+
+
 --drop  table Students
 
 --CREATE TABLE Students
@@ -90,3 +108,14 @@ CREATE TABLE Specialities
 --insert into Students values ('Sanuel', 'samuel18@gmail.com', '2018-01-01',14)
 --insert into Students values ('Soraya', 'soraya18@gmail.com', '2018-01-09',16)
 --insert into Students values ('alejandro', 'alejandro@gmail.com', '2018-01-09',19)
+
+select
+        doctor0_.DoctorId as doctorid1_0_,
+        doctor0_.Address as address2_0_,
+        doctor0_.DateOfBirth as dateofbi3_0_,
+        --doctor0_.hospital as hospital4_0_,
+        doctor0_.LastNames as lastname5_0_,
+        doctor0_.FirstName as firstnam6_0_,
+        doctor0_.PictureFile as picturef7_0_ 
+    from
+        Doctors doctor0_
