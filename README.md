@@ -106,13 +106,24 @@ insert into Doctors values ('Samira', 'Molina Lopez' , '1990-01-28','Rosendo 85'
 ![configuracion base de datos](/documentation/database_conection.png)
 
 
-- Run the backpend API.
-- 
+- Run the backpend API with the IDE.
+
+![configuracion base de datos](/documentation/running_spring_boot.png)
+
+- Open web browser at local url (http://localhost:8080/listar)
+
+![configuracion base de datos](/documentation/doctor_list1.png)
 
 
-## Development server
+- Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+
+- Open web browser to see **angular implementation** at local url (http://localhost:4200/)
+
+![configuracion base de datos](/documentation/doctor_list2.png)
+
 
 ## Code scaffolding
 
