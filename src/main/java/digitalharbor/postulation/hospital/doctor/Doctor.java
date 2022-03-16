@@ -28,7 +28,7 @@ public class Doctor {
 	@Id	
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "DoctorId")
-	private Integer Id;
+	private Integer id;
 	
 	
 	@ManyToOne(fetch = FetchType.LAZY)
@@ -44,7 +44,7 @@ public class Doctor {
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date dateOfBirth;
 	@Column(name = "Address")
-	private String adress;
+	private String address;
 	@Column(name = "PictureFile")
 	private String pictureFile;
 
@@ -57,7 +57,7 @@ public class Doctor {
 		this.names = names;
 		this.lastNames = lastNames;
 		this.dateOfBirth = dateOfBirth;
-		this.adress = adress;
+		this.address = adress;
 		this.pictureFile = pictureFile;
 	}
 	
@@ -66,16 +66,16 @@ public class Doctor {
 		this.names = names;
 		this.lastNames = lastNames;
 		this.dateOfBirth = dateOfBirth;
-		this.adress = adress;
+		this.address = adress;
 		this.pictureFile = pictureFile;
 	}
 
 	public Integer getId() {
-		return this.Id;
+		return this.id;
 	}
 
 	public void setId(Integer Id) {
-		this.Id = Id;
+		this.id = Id;
 	}
 
 	public Hospital getHospital() {
@@ -110,12 +110,14 @@ public class Doctor {
 		this.dateOfBirth = dateOfBirth;
 	}
 
-	public String getAdress() {
-		return this.adress;
+	
+
+	public String getAddress() {
+		return address;
 	}
 
-	public void setAdress(String adress) {
-		this.adress = adress;
+	public void setAddress(String address) {
+		this.address = address;
 	}
 
 	public String getPictureFile() {

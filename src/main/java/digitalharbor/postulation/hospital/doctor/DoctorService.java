@@ -3,6 +3,7 @@ package digitalharbor.postulation.hospital.doctor;
 
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -38,9 +39,15 @@ public class DoctorService {
 	}
 
 
-	public void saveDoctor(Doctor doctor) {
+	public Doctor saveDoctor(Doctor doctor) {
 		// TODO Auto-generated method stub
-		doctorRepository.save(doctor);
+		return doctorRepository.save(doctor);
+	}
+	
+	public Doctor updateDoctorById(Doctor doc) {
+		// TODO Auto-generated method stub
+		
+		return doctorRepository.save( doc);
 	}
 
 
@@ -53,6 +60,14 @@ public class DoctorService {
 	public void deleteDoctorById(int id) {
 		// TODO Auto-generated method stub
 		doctorRepository.deleteById(id);
+	}
+	
+	public Optional<Doctor> findDoctorById(int id) {
+		// TODO Auto-generated method stub
+		//return Optional.ofNullable(doctorRepository.findById(id).orElseThrow(() -> new UserNotFoundException("Doctor by id " + id + " was not found")));
+		//return doctorRepository.findDoctorById(id)
+          //      .orElseThrow(() -> new UserNotFoundException("Doctor by id " + id + " was not found"));
+		return doctorRepository.findById(id);
 	}
 
 
